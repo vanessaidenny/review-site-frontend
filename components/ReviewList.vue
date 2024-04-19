@@ -1,6 +1,6 @@
 <template>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 py-4">
-        <div v-for="review in reviews.data" :key="review.id" class="col">
+        <div v-for="review in reviews" :key="review.id" class="col">
             <RouterLink :to="'/reviews/' + review.id" class="card bg-light h-100 text-center">
                 <img
                     class="card-img-top align-self-center p-2"

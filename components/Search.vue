@@ -1,12 +1,24 @@
 <template>
     <div>
-        <form className="form-inline pb-3">
-            <input name="searchInput" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-        </form>
+      <form @submit.prevent class="form-inline pb-3">
+        <input v-model="searchInput" @input="handleSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+      </form>
     </div>
-</template>
-
-<script setup>
-</script>
-
-<style scoped></style>
+  </template>
+  
+  <script setup>
+  import { ref } from 'vue';
+  
+  const searchInput = ref('');
+  
+  const handleSearch = (event) => {
+    searchInput.value = event.target.value.trim(); 
+  
+    // Emit the searchInput value to the parent component
+    $emit('search', searchInput.value);
+  };
+  </script>
+  
+  <style scoped>
+  </style>
+  
