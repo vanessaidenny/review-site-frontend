@@ -20,7 +20,10 @@
             </div>
             <div class="review-info">
                 <h3 class="fw-semibold">Review</h3>
-                <p>Rating: {{ data.data.attributes.rating }}</p>    
+                <div class="d-flex flex-row gap-2 mt-3 mb-2">
+                    <p class="my-0">Rating: {{ data.data.attributes.rating }}</p>
+                    <NuxtRating :read-only="true" :ratingValue="data.data.attributes.rating" :rating-size="'1.5rem'" />
+                </div>
                 <p>{{ data.data.attributes.content }}</p>
             </div>
         </div>

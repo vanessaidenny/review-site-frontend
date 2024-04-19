@@ -13,8 +13,11 @@
             <h5 class="card-title">{{ review.attributes.title }}</h5>
             <i>by {{ review.attributes.author }}</i>
           </div>
-          <ul class="list-group list-group-flush border">
-            <li class="list-group-item">Rating: {{ review.attributes.rating }}</li>
+          <ul class="list-group list-group-flush border d-flex text-center">
+            <li class="list-group-item d-flex flex-row gap-4">
+              <small>Rating: {{ review.attributes.rating }}</small>
+              <NuxtRating :read-only="true" :ratingValue="review.attributes.rating" :rating-size="'20px'" />
+            </li>
           </ul>
         </div>
       </RouterLink>
