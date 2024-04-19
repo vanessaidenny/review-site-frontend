@@ -1,26 +1,28 @@
 <template>
-    <div class="ps-4 pt-3">
-        <RouterLink to="/" class="text-decoration-none">
-            <button type="button" class="btn btn-dark btn-sm">Back to Home</button>
-        </RouterLink>
-    </div>    
-    <div class="container-fluid d-md-flex p-3">
+    <div class="container d-md-flex d-flex flex-column flex-md-row flex-lg-row gap-4 gap-lg-5 bg-light rounded p-4">
         <div class="text-center">
-            <img class="px-2"
+            <img class="shadow-lg"
                 :src="data.data.attributes.image.data.attributes.formats.small.url"
                 :alt="data.data.attributes.title + ' book cover image'"
             />
-        </div>        
-        <div class="d-flex flex-column text-center text-md-start px-2">
-            <h2 class="pt-2">{{ data.data.attributes.title }}</h2>
-            <h5 class="pt-2">{{ data.data.attributes.author }}</h5>
-            <p>Rating: {{ data.data.attributes.rating }}</p>
-            <div class="text-start">
+        </div>
+        <div class="d-flex flex-column text-center text-md-start justify-content-start">
+            <div class="book-info mb-4">
+                <div>
+                    <h2 class="fw-semibold display-6">{{ data.data.attributes.title }}</h2>
+                    <i>Written by {{ data.data.attributes.author }}</i>
+                </div>
+                <div class="container d-flex flex-row justify-content-evenly my-4 py-2 border rounded bg-white">
+                    <p class="my-0 fw-light">Published: {{ data.data.attributes.year }}</p>
+                    <p class="my-0 fw-light">Genre: {{ data.data.attributes.genre }}</p>
+                    <p class="my-0 fw-light">Pages: {{ data.data.attributes.pages }}</p>
+                </div>
+            </div>
+            <div class="review-info">
+                <h3 class="fw-semibold">Review</h3>
+                <p>Rating: {{ data.data.attributes.rating }}</p>    
                 <p>{{ data.data.attributes.content }}</p>
-                <p class="fw-light">Published: {{ data.data.attributes.year }}</p>
-                <p class="fw-light">Genre: {{ data.data.attributes.genre }}</p>
-                <p class="fw-light">Pages: {{ data.data.attributes.pages }}</p>
-            </div>            
+            </div>
         </div>
     </div>
 </template>

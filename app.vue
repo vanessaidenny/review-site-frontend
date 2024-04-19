@@ -13,8 +13,4 @@
   flex-direction: column;
   align-items: center;
 }
-.btn-primary:hover {
-  background-color: green; 
-  color: #ffffff; /* Optional: change text color on hover */
-}
 </style>
