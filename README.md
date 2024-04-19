@@ -1,7 +1,7 @@
 # 📖 Book Review Site
 
 #### Team Members:
-- Jessielorrai Mbekoudjuatio
+- Jessie lorraine Mbekou Djuatio
 - Vanessa Isabela Denny
 - Yee Ting Lau
 - Yuka Ishii
